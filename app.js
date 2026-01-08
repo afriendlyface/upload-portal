@@ -4,10 +4,11 @@ const instructions = document.getElementById("instructions")
 const commentEl = document.getElementById("comment")
 const statusEl = document.getElementById("status")
 
-const CHECK_EMAIL_URL =
-  "https://uqauquuaoxcsjxaqqrnd.supabase.co/functions/v1/check-email"
-const UPLOAD_FILE_URL =
-  "https://uqauquuaoxcsjxaqqrnd.supabase.co/functions/v1/upload-file"
+const SUPABASE_URL = "https://uqauquuaoxcsjxaqqrnd.supabase.co"
+const SUPABASE_ANON_KEY = "your-anon-key-here" // Get from Supabase dashboard
+
+const CHECK_EMAIL_URL = `${SUPABASE_URL}/functions/v1/check-email`
+const UPLOAD_FILE_URL = `${SUPABASE_URL}/functions/v1/upload-file`
 
 let currentEmail = null
 
@@ -21,7 +22,10 @@ emailForm.addEventListener("submit", async (e) => {
   try {
     const res = await fetch(CHECK_EMAIL_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+      },
       body: JSON.stringify({ email })
     })
 
@@ -37,7 +41,6 @@ emailForm.addEventListener("submit", async (e) => {
     instructions.hidden = false
     statusEl.textContent = ""
 
-    // Lock email field after success
     document.getElementById("email").disabled = true
   } catch (err) {
     statusEl.textContent = "Something went wrong"
@@ -55,6 +58,9 @@ uploadForm.addEventListener("submit", async (e) => {
   try {
     const res = await fetch(UPLOAD_FILE_URL, {
       method: "POST",
+      headers: {
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+      },
       body: formData
     })
 
