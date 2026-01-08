@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Your Document</h1>
+
+    <form id="uploadForm">
+      <label>
+        Email address
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        File to upload
+        <input type="file" name="file" required />
+      </label>
+
+      <button type="submit">Upload</button>
+    </form>
+
+    <p id="comment" class="comment"></p>
+    <p id="status" class="status"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
