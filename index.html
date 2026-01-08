@@ -10,21 +10,28 @@
   <div class="container">
     <h1>Upload Your Document</h1>
 
-    <form id="uploadForm">
+    <!-- STEP 1: EMAIL -->
+    <form id="emailForm">
       <label>
         Email address
-        <input type="email" name="email" required />
+        <input type="email" id="email" required />
       </label>
-
-      <label>
-        File to upload
-        <input type="file" name="file" required />
-      </label>
-
-      <button type="submit">Upload</button>
+      <button type="submit">Continue</button>
     </form>
 
-    <p id="comment" class="comment"></p>
+    <!-- STEP 2: INSTRUCTIONS + UPLOAD -->
+    <div id="instructions" hidden>
+      <p id="comment" class="comment"></p>
+
+      <form id="uploadForm">
+        <label>
+          Upload file
+          <input type="file" name="file" required />
+        </label>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+
     <p id="status" class="status"></p>
   </div>
 
