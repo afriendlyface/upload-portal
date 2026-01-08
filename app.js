@@ -12,7 +12,6 @@ const UPLOAD_FILE_URL = `${SUPABASE_URL}/functions/v1/upload-file`
 
 let currentEmail = null
 
-// STEP 1: Check email and fetch instructions
 emailForm.addEventListener("submit", async (e) => {
   e.preventDefault()
   statusEl.textContent = "Checking email…"
@@ -47,7 +46,6 @@ emailForm.addEventListener("submit", async (e) => {
   }
 })
 
-// STEP 2: Upload file
 uploadForm.addEventListener("submit", async (e) => {
   e.preventDefault()
   statusEl.textContent = "Uploading…"
