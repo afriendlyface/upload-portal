@@ -5,7 +5,7 @@ const commentEl = document.getElementById("comment")
 const statusEl = document.getElementById("status")
 
 const SUPABASE_URL = "https://uqauquuaoxcsjxaqqrnd.supabase.co"
-const SUPABASE_ANON_KEY = "your-anon-key-here" // Get from Supabase dashboard
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxYXVxdXVhb3hjc2p4YXFxcm5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc4ODgxMzgsImV4cCI6MjA4MzQ2NDEzOH0.fh37gQGsZUWM2igq1ceKoMdOXLTXBQzvgRY3KvUhuO4" // Get from Supabase dashboard
 
 const CHECK_EMAIL_URL = `${SUPABASE_URL}/functions/v1/check-email`
 const UPLOAD_FILE_URL = `${SUPABASE_URL}/functions/v1/upload-file`
